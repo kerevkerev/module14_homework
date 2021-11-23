@@ -25,71 +25,119 @@ const obj = {
 // console.log(emptyObj);
 
 // task_4
-function ElectricalDevice() {
-  this.voltage = 220;
-}
-ElectricalDevice.prototype.plug_in = function (electricPlug) {
-  if (electricPlug == "on") {
-    return "В розетку включен";
-  }
-  if (electricPlug == "off") {
-    return "От розетки отключен";
-  }
-};
 
-//лампы
-function Lighting(type_of, plinth, power) {
-  this.type_of = type_of;
-  this.plinth = plinth;
-  this.power = `${power} Вт`;
-}
-Lighting.prototype = new ElectricalDevice();
-Lighting.prototype.plug_in = function (electricPlug) {
-  if (electricPlug == "on") {
-    return "Лампа горит";
-  }
-  if (electricPlug == "off") {
-    return "Лампа не горит";
-  }
-};
+// function ElectricalDevice() {
+//   this.voltage = 220;
+// }
+// ElectricalDevice.prototype.plug_in = function (electricPlug) {
+//   if (electricPlug == "on") {
+//     return "В розетку включен";
+//   }
+//   if (electricPlug == "off") {
+//     return "От розетки отключен";
+//   }
+// };
 
-// чайники
-function Kettle(volume, bodyMaterial, сolour, power) {
-  this.volume = volume;
-  this.bodyMaterial = bodyMaterial;
-  this.colour = сolour;
-  this.power = `${power} Вт`;
-}
-Kettle.prototype = new ElectricalDevice();
-Kettle.prototype.plug_in = function (electricPlug) {
-  if (electricPlug == "on") {
-    return "Чайник включен";
-  }
-  if (electricPlug == "off") {
-    return "Чайник отключен";
-  }
-};
+// //лампы
+// function Lighting(type_of, plinth, power) {
+//   this.type_of = type_of;
+//   this.plinth = plinth;
+//   this.power = `${power} Вт`;
+// }
+// Lighting.prototype = new ElectricalDevice();
+// Lighting.prototype.plug_in = function (electricPlug) {
+//   if (electricPlug == "on") {
+//     return "Лампа горит";
+//   }
+//   if (electricPlug == "off") {
+//     return "Лампа не горит";
+//   }
+// };
 
-// утюги
-function Iron(brand, weight, power) {
-  this.brand = brand;
-  this.weight = `${weight} кг`;
-  this.power = `${power} Вт`;
-}
-Iron.prototype = new ElectricalDevice();
+// // чайники
+// function Kettle(volume, bodyMaterial, сolour, power) {
+//   this.volume = volume;
+//   this.bodyMaterial = bodyMaterial;
+//   this.colour = сolour;
+//   this.power = `${power} Вт`;
+// }
+// Kettle.prototype = new ElectricalDevice();
+// Kettle.prototype.plug_in = function (electricPlug) {
+//   if (electricPlug == "on") {
+//     return "Чайник включен";
+//   }
+//   if (electricPlug == "off") {
+//     return "Чайник отключен";
+//   }
+// };
 
-const lamp = new Lighting("Светодиодная", "e27", 50);
-const iron = new Iron("Филипс", 2, 2000);
-const kettle = new Kettle(1.5, "пластиковый", "черный", 1500);
+// // утюги
+// function Iron(brand, weight, power) {
+//   this.brand = brand;
+//   this.weight = `${weight} кг`;
+//   this.power = `${power} Вт`;
+// }
+// Iron.prototype = new ElectricalDevice();
 
-console.log(lamp);
-console.log(lamp.plug_in("off"));
-console.log(kettle);
-console.log(kettle.plug_in("on"));
-console.log(iron);
-console.log(iron.plug_in("on"));
-function power() {
-  if()
-  return parseInt(iron.power) + parseInt(kettle.power) + parseInt(lamp.power);
-}
-console.log(power());
+// const lamp = new Lighting("Светодиодная", "e27", 50);
+// const iron = new Iron("Филипс", 2, 2000);
+// const kettle = new Kettle(1.5, "пластиковый", "черный", 1500);
+
+// console.log(lamp);
+// console.log(lamp.plug_in("off"));
+// console.log(kettle);
+// console.log(kettle.plug_in("on"));
+// console.log(iron);
+// console.log(iron.plug_in("on"));
+// function power() {
+//   if()
+//   return parseInt(iron.power) + parseInt(kettle.power) + parseInt(lamp.power);
+// }
+// console.log(power());
+
+// task_5
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   getInfo() {
+//     console.log("Привет" + " " + this.name);
+//   }
+// }
+
+// let user = new User("Толя");
+
+// user.getInfo();
+
+// class Parent {
+//   constructor(ownCity) {
+//     this.ownCity = ownCity || "Moscow";
+//     this.hasFlat = true;
+//   }
+//   getInfo() {
+//     return "City" + " : " + this.ownCity;
+//   }
+// }
+// class Child extends Parent {
+//   constructor(isStudent, city, ownCity) {
+//     super(ownCity);
+//     this.isStudent = isStudent;
+//     this.city = isStudent ? city : ownCity;
+//   }
+//   getInfo() {
+//     if (this.isStudent) {
+//       return "bla bla" + " " + this.city;
+//     } else {
+//       return super.getInfo();
+//     }
+//   }
+// }
+
+// const student = new Child(true, "Piter");
+// // console.log(student.getInfo());
+
+// const stu = new Child(0, "JJJJ");
+// // console.log(stu.getInfo());
+// console.log(stu instanceof Child);
